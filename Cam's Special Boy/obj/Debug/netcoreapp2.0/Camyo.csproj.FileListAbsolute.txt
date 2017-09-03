@@ -1,0 +1,14 @@
+d:\Documents\Visual Studio 2017\Projects\Cam's Special Boy\Cam's Special Boy\obj\Debug\netcoreapp2.0\Camyo.csprojResolveAssemblyReference.cache
+d:\Documents\Visual Studio 2017\Projects\Cam's Special Boy\Cam's Special Boy\obj\Debug\netcoreapp2.0\Camyo.csproj.CoreCompileInputs.cache
+d:\Documents\Visual Studio 2017\Projects\Cam's Special Boy\Cam's Special Boy\obj\Debug\netcoreapp2.0\Camyo.AssemblyInfoInputs.cache
+d:\Documents\Visual Studio 2017\Projects\Cam's Special Boy\Cam's Special Boy\obj\Debug\netcoreapp2.0\Camyo.AssemblyInfo.cs
+d:\Documents\Visual Studio 2017\Projects\Cam's Special Boy\Cam's Special Boy\bin\Debug\netcoreapp2.0\Camyo.deps.json
+d:\Documents\Visual Studio 2017\Projects\Cam's Special Boy\Cam's Special Boy\bin\Debug\netcoreapp2.0\Camyo.runtimeconfig.json
+d:\Documents\Visual Studio 2017\Projects\Cam's Special Boy\Cam's Special Boy\bin\Debug\netcoreapp2.0\Camyo.runtimeconfig.dev.json
+d:\Documents\Visual Studio 2017\Projects\Cam's Special Boy\Cam's Special Boy\bin\Debug\netcoreapp2.0\Camyo.dll
+d:\Documents\Visual Studio 2017\Projects\Cam's Special Boy\Cam's Special Boy\bin\Debug\netcoreapp2.0\Camyo.pdb
+d:\Documents\Visual Studio 2017\Projects\Cam's Special Boy\Cam's Special Boy\obj\Debug\netcoreapp2.0\Camyo.dll
+d:\Documents\Visual Studio 2017\Projects\Cam's Special Boy\Cam's Special Boy\obj\Debug\netcoreapp2.0\Camyo.pdb
+D:\Documents\Visual Studio 2017\Projects\Cam's Special Boy\Cam's Special Boy\bin\Debug\netcoreapp2.0\birthdays.json
+D:\Documents\Visual Studio 2017\Projects\Cam's Special Boy\Cam's Special Boy\bin\Debug\netcoreapp2.0\pronouns.json
+D:\Documents\Visual Studio 2017\Projects\Cam's Special Boy\Cam's Special Boy\bin\Debug\netcoreapp2.0\Camyo.dll.config
