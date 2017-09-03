@@ -10,7 +10,7 @@ Camyo is an LGBT friendly Discord bot made using [Discord.Net](https://github.co
 All commands can be used with a mention to the bot instead of the ~ prefix as well.
 
 # Configuration
-* To run the bot on your server you'll need to provide a bot token and a primary channel ID (specifies where birthday announcements are made) in the app.config file.
+* To run the bot on your server you'll need to provide a bot token and a primary channel ID (specifies where birthday announcements are made) in the app.config (camyo.dll.config after building) file.
 
 # Building
 Before building from source be sure to install the following NuGet packages:
