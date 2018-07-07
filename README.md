@@ -1,5 +1,5 @@
-# Camyo Discord Bot
-Camyo is an LGBT friendly Discord bot made using [Discord.Net](https://github.com/RogueException/Discord.Net) (along with Newtonsoft's [JSON.NET](https://www.newtonsoft.com/json) and [FleuntScheduler](https://github.com/fluentscheduler/FluentScheduler)).
+# Lefty Discord Bot
+Lefty is an LGBT friendly Discord bot made using [Discord.Net](https://github.com/RogueException/Discord.Net) (along with Newtonsoft's [JSON.NET](https://www.newtonsoft.com/json) and [FleuntScheduler](https://github.com/fluentscheduler/FluentScheduler)).
 
 # Features
 * ```~pronouns me|he|she|they``` The ability to remember a user's pronouns. The bot will set pronouns for a user on command and only refer to that user using their set pronouns.
@@ -15,8 +15,7 @@ All commands can be used with a mention to the bot instead of the ~ prefix as we
 # Builds
 You can download pre-built versions of the bot from my website:
 
-* [Lite](https://developedbycam.net/storage/Camyo-0.0.9a.zip) (Requires .Net Core to be installed on your system)
-* [Full](https://developedbycam.net/storage/Camyo-0.0.9a-full.zip) (Requires no extra dependencies to be installed)
+(Coming Soon)
 
 # Building
 Before building from source be sure to install the following NuGet packages:
