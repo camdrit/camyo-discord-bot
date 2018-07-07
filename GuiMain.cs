@@ -1,10 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -63,16 +58,6 @@ namespace LeftyBotGui
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            button2.Hide();
-            StartAsync();
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -88,7 +73,12 @@ namespace LeftyBotGui
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void GuiMain_Shown(object sender, EventArgs e)
+        {
+            StartAsync();
+        }
+
+        private void GuiMain_Load(object sender, EventArgs e)
         {
             textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(CheckEnterKeyPress);
         }
@@ -101,11 +91,6 @@ namespace LeftyBotGui
             }
         }
 
-        public void consoleControl1_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         private void BirthdayJob(SocketTextChannel channel)
         {
             consoleControl1.WriteOutput(DateTime.Now.ToString() + " - Checking Birthdays...\n", System.Drawing.Color.White);
@@ -114,13 +99,13 @@ namespace LeftyBotGui
             string bulkMessage = "@everyone :birthday: Birthday role call! These lovely gamers have birthdays **tomorrow**:\n\n";
 
             PronounList pronouns;
-            using (StreamReader file = File.OpenText("pronouns.json"))
+            using (StreamReader file = File.OpenText("Editable\\pronouns.json"))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 pronouns = (PronounList)serializer.Deserialize(file, typeof(PronounList));
                 file.Close();
             }
-            using (StreamReader file = File.OpenText("birthdays.json"))
+            using (StreamReader file = File.OpenText("Editable\\birthdays.json"))
             {
                 var tomorrow = DateTime.Today.AddDays(1).ToString("M/d");
                 JsonSerializer serializer = new JsonSerializer();
@@ -133,8 +118,8 @@ namespace LeftyBotGui
                         myPronouns = "2";
                     if (day == tomorrow)
                     {
-                        singleMessage = "@everyone " + _client.GetUser(ulong.Parse(entry.Key)).Mention + "'s birthday is **tomorrow!** :birthday: " + FirstLetterToUpper(pronouns.pronounTypes[int.Parse(myPronouns)][0] as string) + " will be " + GetAge(DateTime.Parse(entry.Value)) + " years old! Be sure to wish " + pronouns.pronounTypes[int.Parse(myPronouns)][1] + " a happy birthday when the time comes!";
-                        bulkMessage += _client.GetUser(ulong.Parse(entry.Key)).Mention + " will be " + GetAge(DateTime.Parse(entry.Value)) + " years old!\n";
+                        singleMessage = "@everyone " + _client.GetUser(ulong.Parse(entry.Key)).Mention + "'s birthday is **tomorrow!** :birthday: " + Helpers.FirstLetterToUpper(pronouns.pronounTypes[int.Parse(myPronouns)][0] as string) + " will be " + Helpers.GetAge(DateTime.Parse(entry.Value)) + " years old! Be sure to wish " + pronouns.pronounTypes[int.Parse(myPronouns)][1] + " a happy birthday when the time comes!";
+                        bulkMessage += _client.GetUser(ulong.Parse(entry.Key)).Mention + " will be " + Helpers.GetAge(DateTime.Parse(entry.Value)) + " years old!\n";
                         totalPeeps++;
                     }
 
@@ -170,23 +155,6 @@ namespace LeftyBotGui
             channel.SendFileAsync("C:\\LeftyImages\\" + img + ".jpg", "meooww!!! (Take a look at the Daily Lefty image. That's me!!!)");
         }
 
-        public int GetAge(DateTime dateOfBirth)
-        {
-            DateTime now = DateTime.Today;
-            int age = now.Year - dateOfBirth.Year;
-            return age;
-        }
-
-        public string FirstLetterToUpper(string str)
-        {
-            if (str == null)
-                return null;
-
-            if (str.Length > 1)
-                return char.ToUpper(str[0]) + str.Substring(1);
-
-            return str.ToUpper();
-        }
     }
 
 }

@@ -32,7 +32,6 @@
             this.consoleControl1 = new ConsoleControl.ConsoleControl();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -43,7 +42,6 @@
             this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Console Output";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // consoleControl1
             // 
@@ -55,7 +53,6 @@
             this.consoleControl1.ShowDiagnostics = false;
             this.consoleControl1.Size = new System.Drawing.Size(636, 383);
             this.consoleControl1.TabIndex = 0;
-            this.consoleControl1.Load += new System.EventHandler(this.consoleControl1_Load);
             // 
             // textBox1
             // 
@@ -76,29 +73,19 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(308, 10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(57, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Start Bot";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // Form1
+            // GuiMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(660, 470);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.consoleControl1);
-            this.Name = "Form1";
+            this.Name = "GuiMain";
             this.Text = "Lefty Discord Bot";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.GuiMain_Load);
+            this.Shown += new System.EventHandler(this.GuiMain_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -109,7 +96,6 @@
         private ConsoleControl.ConsoleControl consoleControl1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
     }
 }
 
