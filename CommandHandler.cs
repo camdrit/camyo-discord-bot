@@ -28,13 +28,12 @@ namespace LeftyBotGui
 
         private async Task HandleCommandAsync(SocketMessage s)
         {
-            var msg = s as SocketUserMessage;
-            if (msg == null) return;
+            if (!(s is SocketUserMessage msg)) return;
 
             var context = new SocketCommandContext(_client, msg);
 
             int argPos = 0;
-            if (msg.HasCharPrefix('~', ref argPos) || msg.HasMentionPrefix(_client.CurrentUser, ref argPos))
+            if (msg.HasCharPrefix(Helpers.Prefix, ref argPos) || msg.HasMentionPrefix(_client.CurrentUser, ref argPos))
             {
                 
                 con.WriteOutput(DateTime.Now.ToString() + " - User " + context.Message.Author.Username + " (" + context.Message.Author.Id.ToString() + ") sent command: " + context.Message.Content + "\n", System.Drawing.Color.White);

@@ -12,9 +12,9 @@ namespace LeftyBotGui.Modules
 
     public class Commands : ModuleBase<SocketCommandContext>
     {
-        private List<string> _malevalidations = new List<string>() { "I love {0}. He's cute. So handsome.", "{0} is a strong boy! Amazing boy!", "{0} :clap: is :clap: valid! :clap:", "{0} is an amazing, hard-working boy who deserves your love and support. Some days may be hard for him, but he's trying and that's all that matters.", "I once heard that {0} saved the world from evil one time. I don't know if that's true but he's really cool anyway so it doesn't matter." };
-        private List<string> _girlvalidations = new List<string>() { "I love {0}. She's cute. So beautiful.", "{0} is a strong girl! Amazing girl!", "{0} :clap: is :clap: valid! :clap:", "{0} is an amazing, hard-working girl who deserves your love and support. Some days may be hard for her, but she's trying and that's all that matters.", "I once heard that {0} saved the world from evil one time. I don't know if that's true but she's really cool anyway so it doesn't matter." };
-        private List<string> _theyvalidations = new List<string>() { "I love {0}. They're cute. So wonderful.", "{0} is a strong gamer! Amazing gamer!", "{0} :clap: is :clap: valid! :clap:", "{0} is an amazing, hard-working gamer who deserves your love and support. Some days may be hard for them, but they're trying and that's all that matters.", "I once heard that {0} saved the world from evil one time. I don't know if that's true but they're really cool anyway so it doesn't matter." };
+        private readonly List<string> _malevalidations = new List<string>() { "I love {0}. He's cute. So handsome.", "{0} is a strong boy! Amazing boy!", "{0} :clap: is :clap: valid! :clap:", "{0} is an amazing, hard-working boy who deserves your love and support. Some days may be hard for him, but he's trying and that's all that matters.", "I once heard that {0} saved the world from evil one time. I don't know if that's true but he's really cool anyway so it doesn't matter." };
+        private readonly List<string> _girlvalidations = new List<string>() { "I love {0}. She's cute. So beautiful.", "{0} is a strong girl! Amazing girl!", "{0} :clap: is :clap: valid! :clap:", "{0} is an amazing, hard-working girl who deserves your love and support. Some days may be hard for her, but she's trying and that's all that matters.", "I once heard that {0} saved the world from evil one time. I don't know if that's true but she's really cool anyway so it doesn't matter." };
+        private readonly List<string> _theyvalidations = new List<string>() { "I love {0}. They're cute. So wonderful.", "{0} is a strong gamer! Amazing gamer!", "{0} :clap: is :clap: valid! :clap:", "{0} is an amazing, hard-working gamer who deserves your love and support. Some days may be hard for them, but they're trying and that's all that matters.", "I once heard that {0} saved the world from evil one time. I don't know if that's true but they're really cool anyway so it doesn't matter." };
         private List<string> _petresponses = new List<string>() { "mrrrp.", "mmrrrow!", "*purrs*", "*bites you*", "*sits on your hand*", "mrrreow?", "mrrreoow!", "*chirps*", "*rolls over*", "*ignores you*", "*glares*", "meow...", "*rubs cheek on hand*" };
         private List<string> _goodpetresonses = new List<string>() { "mrrrp.", "mmrrrow!", "*purrs*", "*sits on your hand*", "mrrreow?", "mrrreoow!", "*chirps*", "*rolls over*", "meow...", "*rubs cheek on hand*" };
         private List<List<string>> _validations;
@@ -22,7 +22,7 @@ namespace LeftyBotGui.Modules
         [Command("Help")]
         public async Task HelpCommand()
         {
-            await Context.Channel.SendMessageAsync("All commands can be executed either by using the prefix **~** or by mentioning me!\n\n***~help***: Displays this dialogue.\n***~birthday m/d/yy***: allows you to set your birthday. I'll remember the date and give a reminder the day prior at 12:00:00 UTC.\n***~validate me/username***: Gives a random bit of love to either yourself or a gamer of your specification.\n***~pronouns me/he/she/they***: allows you to set or check your pronouns. I'll remember them and only ever refer to you using those pronouns.");
+            await Context.Channel.SendMessageAsync("All commands can be executed either by using the prefix **" + Helpers.Prefix + "** or by mentioning me!\n\n***" + Helpers.Prefix + "help***: Displays this dialogue.\n***" + Helpers.Prefix + "birthday m/d/yy***: allows you to set your birthday. I'll remember the date and give a reminder the day prior at 12:00:00 UTC.\n***" + Helpers.Prefix + "validate me/username***: Gives a random bit of love to either yourself or a gamer of your specification.\n***" + Helpers.Prefix + "pronouns me/he/she/they***: allows you to set or check your pronouns. I'll remember them and only ever refer to you using those pronouns.");
         }
 
         [Command("Pet")]
@@ -102,7 +102,7 @@ namespace LeftyBotGui.Modules
                         if (curID.ToString() == Bot.Id.ToString() && Item.Attachments.Count > 1)
                             await Item.DeleteAsync();
                     }
-                    if ((Item.Author.Id == Bot.Id || Item.Content.StartsWith("~")) && Item.Attachments.Count > 1)
+                    if ((Item.Author.Id == Bot.Id || Item.Content.StartsWith(Helpers.Prefix.ToString())) && Item.Attachments.Count > 1)
                         await Item.DeleteAsync();
 
                 }

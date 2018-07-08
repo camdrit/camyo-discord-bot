@@ -55,7 +55,7 @@ namespace LeftyBotGui.Modules
         [Command("Birthday")]
         public async Task BirthdayCommand()
         {
-            await ReplyAsync("You can tell me what your birthday is and I'll remind everyone a day before! Try typing: \n\n***~birthday m/d/yy***\n\nPlease explicitly specify your birthdate with the **m/d/yy** format!");
+            await ReplyAsync("You can tell me what your birthday is and I'll remind everyone a day before! Try typing: \n\n***" + Helpers.Prefix + "birthday m/d/yy***\n\nPlease explicitly specify your birthdate with the **m/d/yy** format!");
         }
 
         private string FormattedDate(string date)

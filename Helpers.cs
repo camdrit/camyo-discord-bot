@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Configuration;
 using System.Windows.Forms;
 
 namespace LeftyBotGui
@@ -10,7 +7,11 @@ namespace LeftyBotGui
     public static class Helpers
     {
 
-        private static ConsoleControl.ConsoleControl _con = (ConsoleControl.ConsoleControl)(Application.OpenForms[0].Controls.Find("consoleControl1", false)[0]);
+        private static readonly ConsoleControl.ConsoleControl _con = (ConsoleControl.ConsoleControl)(Application.OpenForms[0].Controls.Find("consoleControl1", false)[0]);
+
+        public static char Prefix {  get {
+                return char.Parse(ConfigurationManager.AppSettings["commandPrefix"]);
+            } }
 
         public static ConsoleControl.ConsoleControl ConsoleControl { get {
                 return _con;

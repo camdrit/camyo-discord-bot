@@ -27,7 +27,7 @@ namespace LeftyBotGui
             await _client.LoginAsync(TokenType.Bot, ConfigurationManager.AppSettings["botToken"]);
 
 
-            await _client.SetGameAsync("type ~help");
+            await _client.SetGameAsync("type" + Helpers.Prefix + "help");
             await _client.StartAsync();
 
             _handler = new CommandHandler();
@@ -57,7 +57,7 @@ namespace LeftyBotGui
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != "" && textBox1.Text != null && textBox1.Text != String.Empty)
             {

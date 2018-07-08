@@ -24,7 +24,7 @@ namespace LeftyBotGui.Modules
                     await ReplyAsync(user.Username.ToString() + " uses " + pronouns.pronounTypes[thisUserPronouns][0] + "/" + pronouns.pronounTypes[thisUserPronouns][1] + " pronouns!");
                 }
                 else
-                    await ReplyAsync("I don't know " + user.Username.ToString() + "'s pronouns! Ask them to set their pronouns with the ***~pronouns*** command.");
+                    await ReplyAsync("I don't know " + user.Username.ToString() + "'s pronouns! Ask them to set their pronouns with the ***" + Helpers.Prefix + "pronouns*** command.");
             }
 
         }
@@ -102,7 +102,7 @@ namespace LeftyBotGui.Modules
                         await ReplyAsync(me + " uses " + pronouns.pronounTypes[thisUserPronouns][0] + "/" + pronouns.pronounTypes[thisUserPronouns][1] + " pronouns!");
                     }
                     else
-                        await ReplyAsync("I don't know " + me + "'s pronouns! Ask them to set their pronouns with the ***~pronouns*** command.");
+                        await ReplyAsync("I don't know " + me + "'s pronouns! Ask them to set their pronouns with the ***" + Helpers.Prefix + "pronouns*** command.");
                 }
             }
 
@@ -112,7 +112,7 @@ namespace LeftyBotGui.Modules
         [Command("Pronouns")]
         public async Task PronounsCommand()
         {
-            await ReplyAsync("You can set your own pronouns by typing: ***~pronouns type***\n\nAvailable types are:\n**he** - he/him\n**she** - she/her\n**they** - they/them\n\nYou can check your current pronouns by typing: ***~pronouns me***\n\nYou can check someone else's pronouns by typing: ***~pronouns @name***");
+            await ReplyAsync("You can set your own pronouns by typing: ***" + Helpers.Prefix + "pronouns type***\n\nAvailable types are:\n**he** - he/him\n**she** - she/her\n**they** - they/them\n\nYou can check your current pronouns by typing: ***" + Helpers.Prefix + "pronouns me***\n\nYou can check someone else's pronouns by typing: ***" + Helpers.Prefix + "pronouns @name***");
         }
 
     }
