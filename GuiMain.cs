@@ -24,7 +24,6 @@ namespace LeftyBotGui
 
             new CommandHandler();
 
-
             await _client.LoginAsync(TokenType.Bot, ConfigurationManager.AppSettings["botToken"]);
 
 
@@ -37,22 +36,21 @@ namespace LeftyBotGui
 
             consoleControl1.WriteOutput(DateTime.Now.ToString() + " - Bot initialized.\n", System.Drawing.Color.White);
 
+            while (_client.ConnectionState != Discord.ConnectionState.Connected)
+            {
+                System.Threading.Thread.Sleep(500);
+            }
 
-            JobManager.AddJob(() => {
-                if (_client.ConnectionState == Discord.ConnectionState.Connected)
-                {
-                    var channel = _client.GetChannel(ulong.Parse(ConfigurationManager.AppSettings["primaryChannel"])) as SocketTextChannel;
-                    consoleControl1.WriteOutput(DateTime.Now.ToString() + " - Bot is connected to: " + channel.Name + "\n", System.Drawing.Color.White);
-                    textBox1.Invoke(new Action(() => textBox1.Enabled = true));
-                    button1.Invoke(new Action(() => button1.Enabled = true));
-                    JobManager.AddJob(() => BirthdayJob(channel), s => s.ToRunNow().AndEvery(1).Days().At(12, 0));
-                    JobManager.AddJob(() => ImageJob(channel), s => s.ToRunNow().AndEvery(1).Days().At(12, 0));
-                }
-            }, s => s.ToRunOnceIn(20).Seconds());
 
-           
+            var channel = _client.GetChannel(ulong.Parse(ConfigurationManager.AppSettings["primaryChannel"])) as SocketTextChannel;
+            consoleControl1.WriteOutput(DateTime.Now.ToString() + " - Bot is connected to: " + channel.Name + "\n", System.Drawing.Color.White);
+            textBox1.Invoke(new Action(() => textBox1.Enabled = true));
+            button1.Invoke(new Action(() => button1.Enabled = true));
+            JobManager.AddJob(() => BirthdayJob(channel), s => s.ToRunNow().AndEvery(1).Days().At(12, 0));
+            JobManager.AddJob(() => ImageJob(channel), s => s.ToRunNow().AndEvery(1).Days().At(12, 0));
 
         }
+
         public GuiMain()
         {
             InitializeComponent();
