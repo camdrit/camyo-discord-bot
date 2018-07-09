@@ -24,8 +24,16 @@ namespace LeftyBotGui
 
             new CommandHandler();
 
-            await _client.LoginAsync(TokenType.Bot, ConfigurationManager.AppSettings["botToken"]);
+            if ((ConfigurationManager.AppSettings["botToken"] == null || ConfigurationManager.AppSettings["botToken"] == string.Empty ||
+                ConfigurationManager.AppSettings["botToken"] == "bot_token_here") ||
+                (ConfigurationManager.AppSettings["primaryChannel"] == null || ConfigurationManager.AppSettings["primaryChannel"] == string.Empty ||
+                ConfigurationManager.AppSettings["primaryChannel"] == "channel_id_here"))
+            {
+                consoleControl1.WriteOutput(DateTime.Now.ToString() + " - Either the bot token or the channel ID is not configured. Please configure this setting before using the bot.\n", System.Drawing.Color.White);
+                return;
+            }
 
+            await _client.LoginAsync(TokenType.Bot, ConfigurationManager.AppSettings["botToken"]);
 
             await _client.SetGameAsync("type" + Helpers.Prefix + "help");
             await _client.StartAsync();
@@ -49,6 +57,12 @@ namespace LeftyBotGui
             JobManager.AddJob(() => BirthdayJob(channel), s => s.ToRunNow().AndEvery(1).Days().At(12, 0));
             JobManager.AddJob(() => ImageJob(channel), s => s.ToRunNow().AndEvery(1).Days().At(12, 0));
 
+        }
+
+        public Task Log(LogMessage msg)
+        {
+            consoleControl1.WriteOutput(msg.ToString(), System.Drawing.Color.White);
+            return Task.CompletedTask;
         }
 
         public GuiMain()

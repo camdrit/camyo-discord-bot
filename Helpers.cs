@@ -17,6 +17,7 @@ namespace LeftyBotGui
                 return _con;
             } }
 
+
         public static int GetAge(DateTime dateOfBirth)
         {
             DateTime now = DateTime.Today;
