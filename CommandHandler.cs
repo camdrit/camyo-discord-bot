@@ -8,9 +8,7 @@ using System.Windows.Forms;
 namespace LeftyBotGui
 {
     public class CommandHandler
-    {
-        private ConsoleControl.ConsoleControl con = (ConsoleControl.ConsoleControl)(Application.OpenForms[0].Controls.Find("consoleControl1", false)[0]);
-        
+    {    
         private DiscordSocketClient _client;
 
         private CommandService _service;
@@ -36,7 +34,7 @@ namespace LeftyBotGui
             if (msg.HasCharPrefix(Helpers.Prefix, ref argPos) || msg.HasMentionPrefix(_client.CurrentUser, ref argPos))
             {
                 
-                con.WriteOutput(DateTime.Now.ToString() + " - User " + context.Message.Author.Username + " (" + context.Message.Author.Id.ToString() + ") sent command: " + context.Message.Content + "\n", System.Drawing.Color.White);
+                Helpers.ConsoleControl.WriteOutput(DateTime.Now.ToString() + " - User " + context.Message.Author.Username + " (" + context.Message.Author.Id.ToString() + ") sent command: " + context.Message.Content + "\n", System.Drawing.Color.White);
                 var result = await _service.ExecuteAsync(context, argPos);
 
                 if (!result.IsSuccess)

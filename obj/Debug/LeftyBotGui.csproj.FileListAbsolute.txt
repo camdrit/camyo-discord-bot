@@ -283,3 +283,7 @@ C:\Users\Cam\Source\Repos\lefty-discord-bot\obj\Debug\LeftyBotGui.csproj.CoreCom
 C:\Users\Cam\Source\Repos\lefty-discord-bot\obj\Debug\LeftyBotGui.csproj.CopyComplete
 C:\Users\Cam\Source\Repos\lefty-discord-bot\obj\Debug\LeftyBotGui.exe
 C:\Users\Cam\Source\Repos\lefty-discord-bot\obj\Debug\LeftyBotGui.pdb
+C:\Users\Cam\Source\Repos\lefty-discord-bot\bin\Debug\Editable\malevalidations.json
+C:\Users\Cam\Source\Repos\lefty-discord-bot\bin\Debug\Editable\femalevalidations.json
+C:\Users\Cam\Source\Repos\lefty-discord-bot\bin\Debug\Editable\theyvalidations.json
+C:\Users\Cam\Source\Repos\lefty-discord-bot\bin\Debug\Editable\petresponses.json

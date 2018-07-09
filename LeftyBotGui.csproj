@@ -125,6 +125,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Serializable\PronounList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serializable\SerializedList.cs" />
     <EmbeddedResource Include="GuiMain.resx">
       <DependentUpon>GuiMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -138,6 +139,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Content Include="Editable\birthdays.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Editable\malevalidations.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Editable\femalevalidations.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Editable\theyvalidations.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Editable\petresponses.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="packages.config" />
