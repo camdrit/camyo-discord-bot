@@ -29,11 +29,10 @@ Before building from source be sure to install the following NuGet packages:
 
 # TODO
 * Better logging via Discord.Net's Log task
-* Loading validations from a json file so that more can be added dynamically after run-time
 * ~~Sleep the thread until the Discord connection is established instead of waiting an arbitrary amount of time~~
 * ~~Try to catch an exception where the bot will crash if you don't have the bot token and channel ID set~~
 * Refactor all redundant methods into static methods on a helper class
 * ~~Allow prefix char to be set from config file~~
-* Set up most bot reponses from a JSON file so that the bot can be as customizable as possible and without having to rebuild to change text
+* ~~Set up most bot reponses from a JSON file so that the bot can be as customizable as possible and without having to rebuild to change text~~
 * Allow JSON files to be editable via the GUI
 * Allow extra features such as the "Daily Lefty Image" task to be optional via config
