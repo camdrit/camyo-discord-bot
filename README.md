@@ -10,7 +10,7 @@ Lefty is an LGBT friendly Discord bot made using [Discord.Net](https://github.co
 All commands can be used with a mention to the bot instead of the ~ prefix as well.
 
 # Configuration
-* To run the bot on your server you'll need to provide a bot token and a primary channel ID (specifies where birthday announcements are made) in the app.config (LeftyBotGui.dll.config after building) file.
+* To run the bot on your server you'll need to provide a bot token and a primary channel ID (specifies where birthday announcements are made) in the app.config (LeftyBotGui.dll.config after building) file. The default command prefix of "~" can be changed from this file as well.
 
 # Builds
 You can download pre-built versions of the bot from my website:
@@ -33,7 +33,7 @@ Before building from source be sure to install the following NuGet packages:
 * ~~Sleep the thread until the Discord connection is established instead of waiting an arbitrary amount of time~~
 * Try to catch an exception where the bot will crash if you don't have the bot token and channel ID set
 * Refactor all redundant methods into static methods on a helper class
-* Allow prefix char to be set from config file
+* ~~Allow prefix char to be set from config file~~
 * Set up most bot reponses from a JSON file so that the bot can be as customizable as possible and without having to rebuild to change text
 * Allow JSON files to be editable via the GUI
 * Allow extra features such as the "Daily Lefty Image" task to be optional via config
