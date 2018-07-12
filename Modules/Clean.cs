@@ -23,16 +23,24 @@ namespace LeftyBotGui.Modules
             {
                 foreach (var Item in await Context.Channel.GetMessagesAsync(Delete).Flatten())
                 {
-                    Amount++;
+                    
                     var enumerator = Item.MentionedUserIds.GetEnumerator();
                     while (enumerator.MoveNext())
                     {
                         object curID = enumerator.Current;
                         if (curID.ToString() == Bot.Id.ToString() && Item.Attachments.Count < 1)
+                        {
                             await Item.DeleteAsync();
+                            Amount++;
+                        }
+                            
                     }
-                    if ((Item.Author.Id == Bot.Id || Item.Content.StartsWith(Helpers.Prefix.ToString())) && Item.Attachments.Count > 1)
+                    if ((Item.Author.Id == Bot.Id || Item.Content.StartsWith(Helpers.Prefix.ToString())) && Item.Attachments.Count < 1)
+                    {
                         await Item.DeleteAsync();
+                        Amount++;
+                    }
+                        
 
                 }
                 var m = await ReplyAsync("Cleaned up " + Amount + " messages.");
