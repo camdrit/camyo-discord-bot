@@ -13,9 +13,7 @@ All commands can be used with a mention to the bot instead of the ~ prefix as we
 * To run the bot on your server you'll need to provide a bot token and a primary channel ID (specifies where birthday announcements are made) in the app.config (LeftyBotGui.dll.config after building) file. The default command prefix of "~" can be changed from this file as well.
 
 # Builds
-You can download pre-built versions of the bot from my website:
-
-(Coming Soon)
+Head on over to the [Releases](https://github.com/camdrit/lefty-discord-bot/releases) page for precompiled builds.
 
 # Building
 Before building from source be sure to install the following NuGet packages:
