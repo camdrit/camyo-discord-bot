@@ -55,8 +55,8 @@ namespace LeftyBotGui
 
             GuiMain.EnableInputArea((GuiMain)Application.OpenForms[0]);
 
-            JobManager.AddJob(() => BirthdayJob(Channel), s => s.ToRunNow().AndEvery(1).Days().At(12, 0));
-            JobManager.AddJob(() => ImageJob(Channel), s => s.ToRunNow().AndEvery(1).Days().At(12, 0));
+            JobManager.AddJob(() => BirthdayJob(), s => s.ToRunNow().AndEvery(1).Days().At(12, 0));
+            JobManager.AddJob(() => ImageJob(), s => s.ToRunNow().AndEvery(1).Days().At(12, 0));
 
         }
 
@@ -66,7 +66,7 @@ namespace LeftyBotGui
             return Task.CompletedTask;
         }
 
-        private static void BirthdayJob(SocketTextChannel channel)
+        private static void BirthdayJob()
         {
             PronounList pnouns = Helpers.Pronouns;
             Helpers.ConsoleControl.WriteOutput(DateTime.Now.ToString() + " - Checking Birthdays...\n", System.Drawing.Color.White);
@@ -94,12 +94,12 @@ namespace LeftyBotGui
             {
                 Helpers.ConsoleControl.WriteOutput(DateTime.Now.ToString() + " - Birthdays Today: " + totalPeeps + "\n", System.Drawing.Color.White);
                 Helpers.ConsoleControl.WriteOutput(DateTime.Now.ToString() + " - Birthday Message: " + singleMessage + "\n", System.Drawing.Color.White);
-                channel.SendMessageAsync(singleMessage);
+                Channel.SendMessageAsync(singleMessage);
             }
             else if (totalPeeps > 1)
             {
                 bulkMessage += "\n Let's all remember to wish these gamers a happy birthday **tomorrow!** :confetti_ball:";
-                channel.SendMessageAsync(bulkMessage);
+                Channel.SendMessageAsync(bulkMessage);
                 Helpers.ConsoleControl.WriteOutput(DateTime.Now.ToString() + " - Birthdays Today: " + totalPeeps + "\n", System.Drawing.Color.White);
                 Helpers.ConsoleControl.WriteOutput(DateTime.Now.ToString() + " - Birthday Message: " + bulkMessage + "\n", System.Drawing.Color.White);
             }
@@ -109,14 +109,14 @@ namespace LeftyBotGui
             }
         }
 
-        private static void ImageJob(SocketTextChannel channel)
+        private static void ImageJob()
         {
             Random rand = new Random();
             int fCount = Directory.GetFiles("C:\\LeftyImages", "*", SearchOption.TopDirectoryOnly).Length;
             int img = rand.Next(0, fCount);
             Helpers.ConsoleControl.WriteOutput(DateTime.Now.ToString() + " - Current Image Count: " + fCount.ToString() + "\n", System.Drawing.Color.White);
             Helpers.ConsoleControl.WriteOutput(DateTime.Now.ToString() + " - Sending Lefty Image of the Day. Image # " + img.ToString() + "\n", System.Drawing.Color.White);
-            channel.SendFileAsync("C:\\LeftyImages\\" + img + ".jpg", "meooww!!! (Take a look at the Daily Lefty image. That's me!!!)");
+            Channel.SendFileAsync("C:\\LeftyImages\\" + img + ".jpg", "meooww!!! (Take a look at the Daily Lefty image. That's me!!!)");
         }
     }
 }

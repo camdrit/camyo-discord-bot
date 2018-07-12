@@ -10,7 +10,11 @@ namespace LeftyBotGui
     public static class Helpers
     {
 
-        private static readonly ConsoleControl.ConsoleControl _con = (ConsoleControl.ConsoleControl)(Application.OpenForms[0].Controls.Find("consoleControl1", false)[0]);
+        public static ConsoleControl.ConsoleControl ConsoleControl {
+            get {
+                return (ConsoleControl.ConsoleControl)(Application.OpenForms[0].Controls.Find("consoleControl1", false)[0]);
+            }
+        }
 
         private static dynamic _pronouns = new PronounList();
         private static dynamic _maleValidations = new SerializedList();
@@ -60,11 +64,6 @@ namespace LeftyBotGui
                 return GetSerializedObject<BirthdayList>("Editable\\birthdays.json", ref _birthdays);
             }
         }
-
-        public static ConsoleControl.ConsoleControl ConsoleControl { get {
-                return _con;
-            } }
-
 
         public static int GetAge(DateTime dateOfBirth)
         {
