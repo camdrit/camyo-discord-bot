@@ -12,40 +12,57 @@ namespace LeftyBotGui
 
         private static readonly ConsoleControl.ConsoleControl _con = (ConsoleControl.ConsoleControl)(Application.OpenForms[0].Controls.Find("consoleControl1", false)[0]);
 
+        private static dynamic _pronouns = new PronounList();
+        private static dynamic _maleValidations = new SerializedList();
+        private static dynamic _girlValidations = new SerializedList();
+        private static dynamic _theyValidations = new SerializedList();
+        private static dynamic _petResponses = new SerializedList();
+        private static dynamic _birthdays = new BirthdayList();
+
         public static char Prefix {  get {
                 return char.Parse(ConfigurationManager.AppSettings["commandPrefix"]);
             } }
 
         public static List<string> MaleValidations {
             get {
-                SerializedList serializedList = GetSerializedList<SerializedList>("Editable\\malevalidations.json", typeof(SerializedList));
-                return serializedList.responses;
+                return (GetSerializedObject<SerializedList>("Editable\\malevalidations.json", ref _maleValidations)).responses;
             }
+
         }
         public static List<string> GirlValidations {
             get {
-                SerializedList serializedList = GetSerializedList<SerializedList>("Editable\\femalevalidations.json", typeof(SerializedList));
-                return serializedList.responses;
+                return (GetSerializedObject<SerializedList>("Editable\\femalevalidations.json", ref _girlValidations)).responses;
             }
         }
         public static List<string> TheyValidations {
             get {
-                SerializedList serializedList = GetSerializedList<SerializedList>("Editable\\theyvalidations.json", typeof(SerializedList));
-                return serializedList.responses;
+                return (GetSerializedObject<SerializedList>("Editable\\theyvalidations.json", ref _theyValidations)).responses;
             }
         }
 
         public static List<string> PetResponses {
             get {
-                SerializedList serializedList = GetSerializedList<SerializedList>("Editable\\petresponses.json", typeof(SerializedList));
-                return serializedList.responses;
+                return (GetSerializedObject<SerializedList>("Editable\\petresponses.json", ref _petResponses)).responses;
             }
         }
 
         public static PronounList Pronouns {
             get {
-                PronounList pronouns = GetSerializedList<PronounList>("Editable\\pronouns.json", typeof(PronounList));
-                return pronouns;
+                return GetSerializedObject<PronounList>("Editable\\pronouns.json",ref _pronouns);
+            }
+            set {
+                using (StreamWriter sw = new StreamWriter("Editable\\pronouns.json"))
+                using (JsonWriter writer = new JsonTextWriter(sw))
+                {
+                    JsonSerializer serializer = new JsonSerializer();
+                    serializer.Serialize(writer, Pronouns);
+                }
+            }
+        }
+
+        public static BirthdayList Birthdays {
+            get {
+                return GetSerializedObject<BirthdayList>("Editable\\birthdays.json", ref _birthdays);
             }
         }
 
@@ -61,13 +78,20 @@ namespace LeftyBotGui
             return age;
         }
 
-        public static T GetSerializedList<T>(string filename, Type type)
+        public static T GetSerializedObject<T>(string filename, ref dynamic obj)
         {
-            using (StreamReader file = File.OpenText(filename))
+            
+            if (obj != null && obj.LastModified >= File.GetLastWriteTime(filename))
+                return (T) Convert.ChangeType(obj, typeof(T));
+            else
             {
-                JsonSerializer serializer = new JsonSerializer();
-                T list = (T)serializer.Deserialize(file, typeof(T));
-                return (T) Convert.ChangeType(list, type);
+                using (StreamReader file = File.OpenText(filename))
+                {
+                    JsonSerializer serializer = new JsonSerializer();
+                    obj = (T)serializer.Deserialize(file, typeof(T));
+                    obj.LastModified = DateTime.Now;
+                    return obj;
+                }
             }
         }
 
