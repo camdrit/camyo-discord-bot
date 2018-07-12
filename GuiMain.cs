@@ -5,7 +5,6 @@ using System.Windows.Forms;
 
 using Discord;
 using Discord.WebSocket;
-using Newtonsoft.Json;
 using FluentScheduler;
 using System.IO;
 using System.Configuration;

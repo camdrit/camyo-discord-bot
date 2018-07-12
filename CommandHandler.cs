@@ -3,7 +3,6 @@ using Discord.Commands;
 using System.Reflection;
 using System.Threading.Tasks;
 using System;
-using System.Windows.Forms;
 
 namespace LeftyBotGui
 {
