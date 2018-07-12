@@ -60,14 +60,8 @@ namespace LeftyBotGui.Modules
                         await ReplyAsync("I'm sorry, I don't think I know that pronoun set. Maybe try asking if it can be added!");
                         break;
                 }
-                using (StreamWriter sw = new StreamWriter("Editable\\pronouns.json"))
-                using (JsonWriter writer = new JsonTextWriter(sw))
-                {
-                    JsonSerializer serializer = new JsonSerializer();
-                    serializer.Serialize(writer, Helpers.Pronouns);
-                    Helpers.ConsoleControl.WriteOutput(DateTime.Now.ToString() + " - Setting pronouns for User " + Context.Message.Author.Username + " (" + Context.Message.Author.Id.ToString() + ") to " + Helpers.Pronouns.pronounTypes[int.Parse(Helpers.Pronouns.pronounsList[Context.Message.Author.Id.ToString()])][0] + "/" + Helpers.Pronouns.pronounTypes[int.Parse(Helpers.Pronouns.pronounsList[Context.Message.Author.Id.ToString()])][1] + "\n", System.Drawing.Color.White);
-                    sw.Close();
-                }
+                
+                Helpers.ConsoleControl.WriteOutput(DateTime.Now.ToString() + " - Setting pronouns for User " + Context.Message.Author.Username + " (" + Context.Message.Author.Id.ToString() + ") to " + Helpers.Pronouns.pronounTypes[int.Parse(Helpers.Pronouns.pronounsList[Context.Message.Author.Id.ToString()])][0] + "/" + Helpers.Pronouns.pronounTypes[int.Parse(Helpers.Pronouns.pronounsList[Context.Message.Author.Id.ToString()])][1] + "\n", System.Drawing.Color.White);
 
             }
             else
