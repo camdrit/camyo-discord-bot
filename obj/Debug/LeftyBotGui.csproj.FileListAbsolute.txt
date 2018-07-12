@@ -425,7 +425,6 @@ C:\Users\cam.KILN\Source\Repos\lefty-discord-bot\bin\Debug\Newtonsoft.Json.xml
 C:\Users\cam.KILN\Source\Repos\lefty-discord-bot\bin\Debug\System.Collections.Immutable.xml
 C:\Users\cam.KILN\Source\Repos\lefty-discord-bot\bin\Debug\System.Diagnostics.DiagnosticSource.xml
 C:\Users\cam.KILN\Source\Repos\lefty-discord-bot\bin\Debug\System.Interactive.Async.xml
-C:\Users\cam.KILN\Source\Repos\lefty-discord-bot\obj\Debug\LeftyBotGui.csprojAssemblyReference.cache
 C:\Users\cam.KILN\Source\Repos\lefty-discord-bot\obj\Debug\LeftyBotGui.exe.config
 C:\Users\cam.KILN\Source\Repos\lefty-discord-bot\obj\Debug\LeftyBotGui.GuiMain.resources
 C:\Users\cam.KILN\Source\Repos\lefty-discord-bot\obj\Debug\LeftyBotGui.Properties.Resources.resources
@@ -434,3 +433,5 @@ C:\Users\cam.KILN\Source\Repos\lefty-discord-bot\obj\Debug\LeftyBotGui.csproj.Co
 C:\Users\cam.KILN\Source\Repos\lefty-discord-bot\obj\Debug\LeftyBotGui.csproj.CopyComplete
 C:\Users\cam.KILN\Source\Repos\lefty-discord-bot\obj\Debug\LeftyBotGui.exe
 C:\Users\cam.KILN\Source\Repos\lefty-discord-bot\obj\Debug\LeftyBotGui.pdb
+C:\Users\cam.KILN\Source\Repos\lefty-discord-bot\bin\Debug\LeftyBotGui.exe.CodeAnalysisLog.xml
+C:\Users\cam.KILN\Source\Repos\lefty-discord-bot\bin\Debug\LeftyBotGui.exe.lastcodeanalysissucceeded

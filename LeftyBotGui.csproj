@@ -110,6 +110,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BotLogic.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="Modules\Birthday.cs" />
     <Compile Include="Modules\Clean.cs" />
