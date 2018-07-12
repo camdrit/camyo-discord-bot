@@ -1,7 +1,9 @@
 # Lefty Discord Bot
-Lefty is an LGBT friendly Discord bot made using [Discord.Net](https://github.com/RogueException/Discord.Net) (along with Newtonsoft's [JSON.NET](https://www.newtonsoft.com/json) and [FleuntScheduler](https://github.com/fluentscheduler/FluentScheduler)).
+Lefty is an LGBT friendly Discord bot made using [Discord.Net](https://github.com/RogueException/Discord.Net) (along with Newtonsoft's [JSON.NET](https://www.newtonsoft.com/json) and [FleuntScheduler](https://github.com/fluentscheduler/FluentScheduler)). The bot's personality is loosely styled after my cat, Lefty.
 
-# Features
+Many of the bots responses are serialized from JSON files and are reloaded whenever a change to one of these files is detected. This allows the bot's personality (so to speak) to be edited on the fly without having to restart or recompile.
+
+# Commands
 * ```~pronouns me|he|she|they``` The ability to remember a user's pronouns. The bot will set pronouns for a user on command and only refer to that user using their set pronouns.
 * ```~birthday M/D/YY``` The ability to remember a user's birthday. The bot will set a user's birthday on command. The bot checks for birthdays once per day at noon time (local system time) by default. If there are birthdays on the next day, the bot will signal @here reminding other users about the birthdays.
 * ```~validate user``` Sends a randomly chosen bit of encouragement about the specified user to chat.
