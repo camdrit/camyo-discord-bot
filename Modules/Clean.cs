@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace LeftyBotGui.Modules
 {
-    class Clean : ModuleBase<SocketCommandContext>
+    public class Clean : ModuleBase<SocketCommandContext>
     {
         [Command("Clean")]
         [RequireUserPermission(GuildPermission.ManageChannels)]
@@ -28,7 +28,7 @@ namespace LeftyBotGui.Modules
                     while (enumerator.MoveNext())
                     {
                         object curID = enumerator.Current;
-                        if (curID.ToString() == Bot.Id.ToString() && Item.Attachments.Count > 1)
+                        if (curID.ToString() == Bot.Id.ToString() && Item.Attachments.Count < 1)
                             await Item.DeleteAsync();
                     }
                     if ((Item.Author.Id == Bot.Id || Item.Content.StartsWith(Helpers.Prefix.ToString())) && Item.Attachments.Count > 1)

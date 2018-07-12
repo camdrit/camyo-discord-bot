@@ -51,12 +51,7 @@ namespace LeftyBotGui
                 return GetSerializedObject<PronounList>("Editable\\pronouns.json",ref _pronouns);
             }
             set {
-                using (StreamWriter sw = new StreamWriter("Editable\\pronouns.json"))
-                using (JsonWriter writer = new JsonTextWriter(sw))
-                {
-                    JsonSerializer serializer = new JsonSerializer();
-                    serializer.Serialize(writer, Pronouns);
-                }
+                SetSerializedObject("Editable\\pronouns.json", ref _pronouns);
             }
         }
 
@@ -94,6 +89,17 @@ namespace LeftyBotGui
                 }
             }
         }
+
+        public static void SetSerializedObject(string filename, ref dynamic obj)
+        {
+            using (StreamWriter sw = new StreamWriter(filename))
+            using (JsonWriter writer = new JsonTextWriter(sw))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(writer, obj);
+            }
+        }
+
 
         public static string FirstLetterToUpper(string str)
         {

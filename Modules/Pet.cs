@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace LeftyBotGui.Modules
 {
-    class Pet : ModuleBase<SocketCommandContext>
+    public class Pet : ModuleBase<SocketCommandContext>
     {
         [Command("Pet")]
         public async Task PetCommand()

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace LeftyBotGui.Modules
 {
-    class Birthday : ModuleBase<SocketCommandContext>
+    public class Birthday : ModuleBase<SocketCommandContext>
     {
         [Command("Birthday")]
         public async Task BirthdayCommand(string date)
