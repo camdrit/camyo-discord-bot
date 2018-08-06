@@ -56,7 +56,7 @@ namespace LeftyBotGui
             GuiMain.EnableInputArea((GuiMain)Application.OpenForms[0]);
 
             JobManager.AddJob(() => BirthdayJob(), s => s.ToRunNow().AndEvery(1).Days().At(12, 0));
-            JobManager.AddJob(() => ImageJob(), s => s.ToRunNow().AndEvery(1).Days().At(12, 0));
+            //JobManager.AddJob(() => ImageJob(), s => s.ToRunNow().AndEvery(1).Days().At(12, 0));
 
         }
 
