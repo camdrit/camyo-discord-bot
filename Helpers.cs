@@ -76,7 +76,9 @@ namespace LeftyBotGui
         {
             
             if (obj != null && obj.LastModified >= File.GetLastWriteTime(filename))
+            {
                 return (T) Convert.ChangeType(obj, typeof(T));
+            }
             else
             {
                 using (StreamReader file = File.OpenText(filename))
