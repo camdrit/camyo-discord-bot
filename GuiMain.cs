@@ -56,6 +56,11 @@ namespace LeftyBotGui
             instance.textBox1.Invoke(new Action(() => instance.textBox1.Enabled = true));
             instance.button1.Invoke(new Action(() => instance.button1.Enabled = true));
         }
+
+        private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
