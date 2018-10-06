@@ -264,7 +264,6 @@ __pycache__/
 .vs/leftybot/v15/.suo
 .vs/slnx.sqlite
 .vs/VSWorkspaceState.json
-*.csproj
 packages.config
 Properties/AssemblyInfo.cs
 Properties/Resources.Designer.cs
