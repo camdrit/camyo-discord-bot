@@ -61,6 +61,16 @@ namespace LeftyBotGui
         {
 
         }
+
+        private void stopAndQuitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

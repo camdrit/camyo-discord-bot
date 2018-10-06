@@ -34,14 +34,20 @@
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.startBotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stopBotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stopAndQuitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.githubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.startBotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stopBotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stopAndQuitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.setBotTokenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setPrimaryChannelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editPronounsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editBirthdaysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editValidationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,8 +112,34 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // startBotToolStripMenuItem
+            // 
+            this.startBotToolStripMenuItem.Name = "startBotToolStripMenuItem";
+            this.startBotToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.startBotToolStripMenuItem.Text = "Start Bot";
+            // 
+            // stopBotToolStripMenuItem
+            // 
+            this.stopBotToolStripMenuItem.Name = "stopBotToolStripMenuItem";
+            this.stopBotToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.stopBotToolStripMenuItem.Text = "Stop Bot";
+            // 
+            // stopAndQuitToolStripMenuItem
+            // 
+            this.stopAndQuitToolStripMenuItem.Name = "stopAndQuitToolStripMenuItem";
+            this.stopAndQuitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.stopAndQuitToolStripMenuItem.Text = "Quit";
+            this.stopAndQuitToolStripMenuItem.Click += new System.EventHandler(this.stopAndQuitToolStripMenuItem_Click);
+            // 
             // settingsToolStripMenuItem
             // 
+            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1,
+            this.setBotTokenToolStripMenuItem,
+            this.setPrimaryChannelToolStripMenuItem,
+            this.editPronounsToolStripMenuItem,
+            this.editBirthdaysToolStripMenuItem,
+            this.editValidationsToolStripMenuItem});
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
             this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.settingsToolStripMenuItem.Text = "Settings";
@@ -125,39 +157,58 @@
             // githubToolStripMenuItem
             // 
             this.githubToolStripMenuItem.Name = "githubToolStripMenuItem";
-            this.githubToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.githubToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.githubToolStripMenuItem.Text = "Github";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.aboutToolStripMenuItem.Text = "About This Bot";
             // 
             // aboutToolStripMenuItem1
             // 
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(175, 22);
             this.aboutToolStripMenuItem1.Text = "About Discord.NET";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem1_Click);
             // 
-            // startBotToolStripMenuItem
+            // toolStripMenuItem1
             // 
-            this.startBotToolStripMenuItem.Name = "startBotToolStripMenuItem";
-            this.startBotToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.startBotToolStripMenuItem.Text = "Start Bot";
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(190, 22);
+            this.toolStripMenuItem1.Text = "Autostart";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
-            // stopBotToolStripMenuItem
+            // setBotTokenToolStripMenuItem
             // 
-            this.stopBotToolStripMenuItem.Name = "stopBotToolStripMenuItem";
-            this.stopBotToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.stopBotToolStripMenuItem.Text = "Stop Bot";
+            this.setBotTokenToolStripMenuItem.Name = "setBotTokenToolStripMenuItem";
+            this.setBotTokenToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.setBotTokenToolStripMenuItem.Text = "Set Bot Token...";
             // 
-            // stopAndQuitToolStripMenuItem
+            // setPrimaryChannelToolStripMenuItem
             // 
-            this.stopAndQuitToolStripMenuItem.Name = "stopAndQuitToolStripMenuItem";
-            this.stopAndQuitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.stopAndQuitToolStripMenuItem.Text = "Stop and Quit";
+            this.setPrimaryChannelToolStripMenuItem.Name = "setPrimaryChannelToolStripMenuItem";
+            this.setPrimaryChannelToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.setPrimaryChannelToolStripMenuItem.Text = "Set Primary Channel...";
+            // 
+            // editPronounsToolStripMenuItem
+            // 
+            this.editPronounsToolStripMenuItem.Name = "editPronounsToolStripMenuItem";
+            this.editPronounsToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.editPronounsToolStripMenuItem.Text = "Edit Pronouns...";
+            // 
+            // editBirthdaysToolStripMenuItem
+            // 
+            this.editBirthdaysToolStripMenuItem.Name = "editBirthdaysToolStripMenuItem";
+            this.editBirthdaysToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.editBirthdaysToolStripMenuItem.Text = "Edit Birthdays...";
+            // 
+            // editValidationsToolStripMenuItem
+            // 
+            this.editValidationsToolStripMenuItem.Name = "editValidationsToolStripMenuItem";
+            this.editValidationsToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.editValidationsToolStripMenuItem.Text = "Edit Validations...";
             // 
             // GuiMain
             // 
@@ -196,6 +247,12 @@
         private System.Windows.Forms.ToolStripMenuItem startBotToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stopBotToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stopAndQuitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem setBotTokenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setPrimaryChannelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editPronounsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editBirthdaysToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editValidationsToolStripMenuItem;
     }
 }
 
